@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<br>
+<p style="text-align: center; font-size:large">Edit your movie</p>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="confrim">
+
+</form>
+<br>
+
+{% endblock content %}

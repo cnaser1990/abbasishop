@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <!-- shop section -->
+
+  <section class="shop_section layout_padding">
+    <div class="container">
+      <div class="box">
+        <div class="detail-box">
+          <h2>
+            Welcome Enthusiasts
+          </h2>
+          <p>
+            For those who live in a fictional world
+          </p>
+          <br><br><br>
+        </div>
+        <b><h1>Drive To Survive</h1></b>
+        <h6>New season premieres on Feb 23rd </h6><br>
+
+        <div class="img-box">
+          <img src="{% static "images/shop-img.jpg" %}" alt="" style="height: 400px; width:650px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end shop section -->
+
+  <!-- about section -->
+
+  <section class="about_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="{% static "images/about-img.jpg" %}" alt="">
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="detail-box">
+            <div class="heading_container">
+              <hr>
+              <h2>
+                TV Show Of The Day
+              </h2>
+            </div>
+            <p style="font-size: x-large;">
+              Hannibal
+            </p>
+            <a href="">
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- fruit section -->
+
+  <section class="fruit_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <hr>
+        <h2>
+          Movies
+        </h2>
+      </div>
+    </div>
+    <div class="container-fluid">
+
+      <div class="fruit_container">
+        {% for i in movies %}
+          <div class="box">
+            {% if i.photo %}
+            <img src="{{i.photo.url}}" alt="">
+            {% endif %}
+            <div class="link_box">
+              <h5>
+                {{i.name}}
+              </h5>
+              <a href="{% url 'movie_detail' i.id %}">
+                Details
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- end fruit section -->
+
+{% endblock content %}

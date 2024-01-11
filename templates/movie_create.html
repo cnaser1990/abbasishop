@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<br>
+<h3 style="text-align: center;">Create your movie</h3><br>
+<form action="" method="post" style="text-align: center;">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="create">
+
+</form>
+<br><br>
+
+
+{% endblock content %}

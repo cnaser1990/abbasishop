@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            {% if detail.photo %}
+            <img src="{{detail.photo.url}}" alt="" style="height: 500px; width: 350px" >
+            {% endif %}
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="detail-box">
+            <div class="heading_container">
+              <hr>
+              <br>
+              <h2>
+                {{detail.name}}
+              </h2>
+            </div>
+            <p>
+              Genre: {{detail.genre}}
+            </p>
+            <p>
+              Running Time: {{detail.time}}
+            </p>
+            <a href="{% url 'movie_update' detail.id %}" class="bg-primary">Edit</a>
+            <a href="{% url 'movie_delete' detail.id %}" class="bg-danger">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+
+
+{% endblock content %}

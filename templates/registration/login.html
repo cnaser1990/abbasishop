@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<br>
+<h2>Login here:</h2> <br>
+<form action="" method="post" class="py-4" novalidate>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="login">
+
+</form>
+<a href="{% url 'password_reset' %}" class="btn btn-sm bg-primary py-2">forget password?</a>
+<br> <br>
+
+{% endblock content %}
